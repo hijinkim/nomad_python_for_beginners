@@ -7,6 +7,7 @@ def get_last_page(url):
     soup = BeautifulSoup(result.text, "html.parser")
     pages = soup.find("div", {"class": "s-pagination"}).find_all("a")
     last_page = pages[-2].get_text(strip=True)
+    print(f'lastpage ={last_page}')
     return int(last_page)
 
 
